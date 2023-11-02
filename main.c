@@ -1,33 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 4
-
-void square_array(int a[], int size)
-{
-     int i;
-     for (i=0; i<size; i++)
-     a[i] = a[i] * a[i];
-}
-
-void print_array(int a[], int size)
-{
-     int i;
-     for (i=0; i<size; i++)
-         printf("%3d", a[i]);
-     printf("\n");
-}
-
-
+#define SIZE 5
 int main(void)
 {
-    int list[SIZE] = {1, 2, 3, 4};
-    
-    print_array(list, SIZE);
-    square_array(list, SIZE);
-    print_array(list, SIZE);
-    
+   int i;
+   int grade[SIZE];
+   int score[SIZE];
+   for (i=0; i<SIZE; i++)
+      grade[i] = rand() % 100;
+   
+   for(i=0;i<SIZE;i++)
+      score[i]=grade[i];
+   
+   for( i=0; i<SIZE; i++)
+      printf("score[%d] = %d (grade:%i)\n", i, score[i],grade[i]);
     system("PAUSE");	
     return 0;
 }
-
